@@ -3,6 +3,7 @@ import { PostgreSqlDriver } from "@mikro-orm/postgresql";
 import { __prod__ } from "./constants";
 import { Post } from "./entities/Post";
 import  path  from "path";
+import { User } from "./entities/User";
 
 export default {
     migrations: {
@@ -10,7 +11,7 @@ export default {
         pathTs: 'src/migrations',
         glob: '!(*.d).{js,ts}',
     },
-    entities: [Post],
+    entities: [Post, User],
     allowGlobalContext: true,
     dbName: 'lireddit',
     type: "postgresql",
